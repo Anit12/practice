@@ -37,6 +37,8 @@
                                     <!-- Product price-->
                                     {{ $product->price}}<br>
                                     {{ $product->description}}
+                                    <hr>
+                                    Category: {{$product->category->name}}
                                 </div>
                             </div>
                             <!-- Product actions-->
