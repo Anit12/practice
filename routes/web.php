@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ListController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,7 @@ use App\Http\Controllers\CategoryController;
 |
 */
 Route::get('/', [CategoryController::class, 'index']);
+//Route::get('/', [ListController::class, 'categories.index']);
 
 Route::get('/about', function () {
     return view('about');
@@ -28,5 +31,5 @@ Route::get('/contact', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource( 'categories', ListController::Class);
