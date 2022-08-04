@@ -27,8 +27,16 @@
                     
                         <li class="nav-item"><a class="nav-link" href="{{route('about')}}">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('service')}}">Service</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Contact</a></li>  
+                        <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Contact</a></li> 
+                        @guest 
                         <li class="nav-item"><a class="nav-link" href="{{route('login')}}">Login</a></li>  
+                        @endguest
+                        @auth 
+                        <li class="nav-item"><a class="nav-link" href="#" onclick="document.getElementById('logout-form').submit()">Logout</a></li>  
+                        @endauth
+                        <form action="{{route('logout')}}" method="POST" id="logout-form">
+                            @csrf
+                       </form>
                     </ul>
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
