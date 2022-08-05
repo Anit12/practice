@@ -32,4 +32,4 @@ Route::get('/contact', function () {
 Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource( 'categories', ListController::Class);
+Route::resource( 'categories', ListController::Class)->middleware(middleware: 'auth');

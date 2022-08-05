@@ -30,6 +30,7 @@ class ListController extends Controller
     public function create()
     {
         //
+        return view('categories.create');
     }
 
     /**
@@ -40,7 +41,10 @@ class ListController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Category::create([
+       'name'=> $request->name
+        ]);
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -62,7 +66,11 @@ class ListController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories= Category::findorfail($id);
+        
+       //return view('categories.index', compact(varname: 'categories'));
+       //return view('index',['categories.index'=> $categories]);
+       return view('categories.edit',compact('categories'));
     }
 
     /**
@@ -75,6 +83,11 @@ class ListController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $category= Category::find($id);
+        $category->Update([
+         'name'=>$request->name
+        ]);
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -85,6 +98,11 @@ class ListController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category= Category::find($id);
+        $category->delete();
+        
+        //return view('categories.index', compact(varname: 'categories'));
+        //return view('index',['categories.index'=> $categories]);
+        return redirect()->route('categories.index');
     }
 }
