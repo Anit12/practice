@@ -42,18 +42,21 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $Request->validate([
+        $request->validate([
             'name'=> 'required',
             'price'=> 'required',
         ]);
-
+        $path = $request->file(key:'photo')->store('photos', option: 'public');
+        //dd($path);
         Product::create([
             'name'=> $request->name,
             'price'=> $request->price,
             'description'=> $request->description,
             'category_id'=> $request->category_id,
-            'photo'=> ''
+           
+            'photo'=>$path
              ]);
+           
              return redirect()->route('products.index');
     }
 
