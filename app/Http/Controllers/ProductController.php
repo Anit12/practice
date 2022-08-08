@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use App\Http\Requests\StoreProductRequest;
 use App\Models\Category;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Validation;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -40,21 +44,30 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProductRequest $request)
     {
-        $request->validate([
-            'name'=> 'required',
-            'price'=> 'required',
-        ]);
-        $path = $request->file(key:'photo')->store('photos', option: 'public');
+       // $path = Storage::putFile('photos', $request->file('photo'));
+        //$path =$request->file('photo');
+      //  $path = $request->file('photos');
+        //dd($path);
+       // $request->validate([
+           // 'name'=> 'required',
+           // 'price'=> 'required',
+       // ]);
+        $path=$request->file(key:'photo')->store(path:'photos',options:'public');
+        //dd($path);
+        //$path = $request->file(key:'photo')->store('photo', option: 'public');
+        //$path = $request->file('photo')->store('public');
         //dd($path);
         Product::create([
+            
             'name'=> $request->name,
             'price'=> $request->price,
             'description'=> $request->description,
             'category_id'=> $request->category_id,
            
-            'photo'=>$path
+           'photo'=>$path
+        
              ]);
            
              return redirect()->route('products.index');

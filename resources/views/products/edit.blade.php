@@ -3,7 +3,7 @@
  <div class="container">
     <div class="row">
     <div class="col-md-12 col-sm-12 col-lg-12">
-     <form action="{{route('products.update', $products->id)}}" method="POST" enctype="multipart/form-data">
+     <form action="{{route('products.update', $products->id)}}" method="post" enctype="multipart/form-data">
       @method('PUT')
       @csrf
       Name :
@@ -22,7 +22,7 @@
       <br/><br>
       Photo :
       <br/>
-      <input type="file" class="form-control"/>
+      <input type="file" class="form-control" name="photo"/>
       <br/><br>
       <input type="submit" class="btn btn-primary" value="Update"/>
 </form>

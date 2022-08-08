@@ -25,10 +25,7 @@
  @endif
  -->
 
-     <form action="{{route('products.store')}}" method="POST" enctype="multipart/data-form">
- 
-      
-               
+     <form action="{{route('products.store')}}" method="post", enctype="multipart/form-data">           
       @csrf
       Name :
       <br/>
@@ -54,7 +51,7 @@
       <br/>
       <input type="file" name="photo" class="form-control"/>
       <br/><br>
-      <input type="submit" class="btn btn-primary" value="Save"/>
+      <input type="submit" class="btn btn-primary" value="Save" name="Save"/>
 </form>
    </div>
    </div>
