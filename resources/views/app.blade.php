@@ -32,10 +32,13 @@
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        @guest 
+                        <li class="nav-item"><a class="nav-link" href="{{route('login')}}">Login</a></li>  
+                        @endguest
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav><br>
         @yield('content')
     
         <!-- Footer-->
