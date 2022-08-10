@@ -13,4 +13,7 @@ class Registration extends Model
         'fname',
         'password',
     ];
+    public function setNameAttribute($value){
+        $this->attributes['name']= ucwords($value);
+    }
 }
