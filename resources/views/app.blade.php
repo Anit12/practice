@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Agency - Start Bootstrap Theme</title>
+        <title>Example of Second Lecture</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -14,27 +14,28 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="{{ asset('css/styles.css')}}" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+                <a class="navbar-brand" href="#page-top"><img src="{{ asset('assets/img/navbar-logo.svg')}}" alt="..." /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        @guest 
-                        <li class="nav-item"><a class="nav-link" href="{{route('login')}}">Login</a></li>  
-                        @endguest
+                        <li class="nav-item"><a class="nav-link" href="#services" style="color:#f23c3c;">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio"  style="color:#f23c3c;">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about"  style="color:#f23c3c;">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team"  style="color:#f23c3c;">Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact" style="color:#f23c3c;">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('registrations.index')}}"  style="color:#f23c3c;">Create Account</a></li>
+                       @guest
+                        <li class="nav-item"><a class="nav-link" href="{{route('login')}}"  style="color:#f23c3c;">Login</a></li>  
+                     @endguest
                     </ul>
                 </div>
             </div>
@@ -272,7 +273,7 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="{{ asset('js/scripts.js')}}"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->

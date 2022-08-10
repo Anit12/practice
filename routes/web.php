@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\RegistrationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/registrations.index', function () {
+    return view('registrations.index');
+})->name(name:'registrations.index');
+
+
+Route::resource( 'registrations', RegistrationController::Class);
+//->middleware(middleware: 'auth');
 
 Auth::routes();
 
