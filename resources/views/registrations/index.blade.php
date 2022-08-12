@@ -26,7 +26,8 @@
       <td>{{$item->name}}</td>
       <td>{{$item->fname}}</td>
      <td>
-        <button class="btn btn-primary">Edit
+        <a href="{{route('registrations.edit','$item->id')}}">
+          <button class="btn btn-primary" style="font-color:white;">Edit</a>
         <button class="btn btn-primary">Delete
 
      </td>
