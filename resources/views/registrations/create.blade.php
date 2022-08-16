@@ -3,7 +3,8 @@
 <div class="container">
 <a href="{{route('registrations.index')}}" class="btn btn-primary" style="margin-top:80px;">Back</a>
 </div><br>
-<form method="POST" action="{{route('registrations.index')}}" >
+<form method="post" action="{{route('registrations.index')}}"  enctype="multipart/form-data" >
+@method('PUT')
     @csrf
 <div class="container register-form">
             <div class="form">

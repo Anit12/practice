@@ -67,8 +67,8 @@ class RegistrationController extends Controller
      */
     public function edit($id)
     {
-        $registration=Registration::find($id);
-        return view('registrations.edit', compact('registration'));
+        $registrations=Registration::find($id);
+        return view('registrations.edit', compact('registrations'));
     }
 
     /**
@@ -88,7 +88,7 @@ class RegistrationController extends Controller
         $Registration->update();
        
             
-        return redirect('registrations.index')->with('status','updated Successfully');
+        return redirect('registrations.thankyou')->with('status','updated Successfully');
     }
 
     /**

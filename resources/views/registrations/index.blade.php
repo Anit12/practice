@@ -19,14 +19,14 @@
     </tr>
   </thead>
   <tbody>
-    @foreach($registrations as $item)
+    @foreach($registrations as $registrations)
     <tr>
   
-      <td>{{$item->id}}</td>
-      <td>{{$item->name}}</td>
-      <td>{{$item->fname}}</td>
+      <td>{{$registrations->id}}</td>
+      <td>{{$registrations->name}}</td>
+      <td>{{$registrations->fname}}</td>
      <td>
-        <a href="{{route('registrations.edit','$item->id')}}">
+        <a href="{{route('registrations.edit',$registrations->id)}}">
           <button class="btn btn-primary" style="font-color:white;">Edit</a>
         <button class="btn btn-primary">Delete
 

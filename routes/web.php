@@ -21,7 +21,11 @@ Route::get('/registrations.index', function () {
     return view('registrations.index');
 })->name(name:'registrations.index');
 
-
+Route::get('/registrations.thankyou', function () {
+    return view('registrations.thankyou');
+})->name(name:'registrations.thankyou');
+//Route::put('/regisrtrations',[RegistrationController::Class,'registrations.index']);
+//Route::post('/', [RegistrationController::class, 'index']);
 Route::resource( 'registrations', RegistrationController::Class);
 //->middleware(middleware: 'auth');
 
