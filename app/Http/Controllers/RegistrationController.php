@@ -99,6 +99,11 @@ class RegistrationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $registrations= Registration::find($id);
+        $registrations->delete();
+        
+        //return view('categories.index', compact(varname: 'categories'));
+        //return view('index',['categories.index'=> $categories]);
+        return redirect()->route('registrations.index');
     }
 }

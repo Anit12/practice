@@ -28,9 +28,15 @@
      <td>
         <a href="{{route('registrations.edit',$registrations->id)}}">
           <button class="btn btn-primary" style="font-color:white;">Edit</a>
-        <button class="btn btn-primary">Delete
+       
 
      </td>
+     <td> <form action="{{route('registrations.destroy', $registrations->id)}}" method="POST" >
+        @method('DELETE')
+                            @csrf
+                            <input type="submit" value="Delete" class="btn btn-danger" onclick="retrun confirm('Are you sure;')"/>
+                       </form>
+</td>
     </tr>
   @endforeach
   </tbody>
