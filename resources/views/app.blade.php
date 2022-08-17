@@ -34,7 +34,7 @@
                         <li class="nav-item"><a class="nav-link" href="#contact" style="color:#f23c3c;">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('registrations.index')}}"  style="color:#f23c3c;">Create Account</a></li>
                        @guest
-                        <li class="nav-item"><a class="nav-link" href="{{route('login')}}"  style="color:#f23c3c;">Login</a></li>  
+                        <li class="nav-item"><a class="nav-link" href="{{route('login')}}"  style="color:#f23c3c;">Admin Login</a></li>  
                      @endguest
                     </ul>
                 </div>
