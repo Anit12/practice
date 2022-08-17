@@ -29,6 +29,18 @@ Route::get('/registrations.thankyou', function () {
 Route::resource( 'registrations', RegistrationController::Class);
 //->middleware(middleware: 'auth');
 
+
+
+Route::get('visitor_list/', [App\Http\Controllers\RegistrationController::class, 'index']);
+Route::get('create_visitor/', [App\Http\Controllers\RegistrationController::class, 'create']);
+Route::post('registrations_store', [App\Http\Controllers\RegistrationController::class, 'store']);
+
+
+Route::get('edit_visitor/{id}', [App\Http\Controllers\RegistrationController::class, 'edit']);
+Route::put('update_visitor/{id}', [App\Http\Controllers\RegistrationController::class, 'update']);
+Route::delete('delete_visitor/{id}', [App\Http\Controllers\RegistrationController::class, 'destroy']);
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

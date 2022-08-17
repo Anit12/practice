@@ -5,7 +5,7 @@
 @if(session('status'))
 <h6 class="alert alert-warning">{{session('status')}}</h6>
 @endif
-<a href="{{route('registrations.create')}}" class="btn btn-primary " style="float:right;">Add visitor</a><br><br>
+<a href="{{url('create_visitor')}}" class="btn btn-primary " style="float:right;">Add visitor</a><br><br>
 </div>
 <div class="container">
 <h3>Visitor List</h3>
@@ -26,12 +26,13 @@
       <td>{{$registrations->name}}</td>
       <td>{{$registrations->fname}}</td>
      <td>
-        <a href="{{route('registrations.edit',$registrations->id)}}">
-          <button class="btn btn-primary" style="font-color:white;">Edit</a>
+   
+        <a href="  {{ url('edit_visitor/'.$registrations->id) }}">
+          <input type="submit" class="btn btn-primary" style="font-color:white;" value="Edit"></a>
        
 
      </td>
-     <td> <form action="{{route('registrations.destroy', $registrations->id)}}" method="POST" >
+     <td> <form action="{{ url('delete_visitor/'.$registrations->id) }}" method="POST" >
         @method('DELETE')
                             @csrf
                             <input type="submit" value="Delete" class="btn btn-danger" onclick="retrun confirm('Are you sure;')"/>

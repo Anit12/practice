@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreRegisterPostRequest;
 use App\Models\Registration;
 
 class RegistrationController extends Controller
@@ -35,8 +36,9 @@ class RegistrationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRegisterPostRequest $request)
     {
+        $registrations = Registration::all();
         $Registration= new Registration;
         $Registration->name= $request->input('name');
         $Registration->fname= $request->input('fname','anit');
@@ -44,8 +46,8 @@ class RegistrationController extends Controller
         //dd($Registration);
         $Registration->save();
        
-            
-        return redirect('registrations.index')->with('status','Added Successfully');
+        return view('registrations.index',compact('registrations'));
+        // return view('registrations.index', compact('registrations'))->with('status','Added Successfully');
     }
 
     /**
@@ -67,6 +69,7 @@ class RegistrationController extends Controller
      */
     public function edit($id)
     {
+        
         $registrations=Registration::find($id);
         return view('registrations.edit', compact('registrations'));
     }

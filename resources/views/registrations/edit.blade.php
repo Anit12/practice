@@ -1,9 +1,9 @@
 @extends('app')
 @section('content')
 <div class="container">
-<a href="{{route('registrations.index')}}" class="btn btn-primary" style="margin-top:80px;">Back</a>
+<a href="{{url('visitor_list')}}" class="btn btn-primary" style="margin-top:80px;">Back</a>
 </div><br>
-<form method="post" action="{{route('registrations.update',$registrations->id)}}" enctype="multipart/form-data" >
+<form method="post" action="{{url('update_visitor/'.$registrations->id)}}" enctype="multipart/form-data" >
 @method('PUT')
  @csrf
 <div class="container register-form">
