@@ -20,7 +20,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="{{ asset('assets/img/navbar-logo.svg')}}" alt="..." /></a>
+                <a class="navbar-brand" href="/"><img src="{{ asset('assets/img/navbar-logo.svg')}}" alt="..." /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -30,9 +30,9 @@
                         <li class="nav-item"><a class="nav-link" href="#services" style="color:#f23c3c;">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio"  style="color:#f23c3c;">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about"  style="color:#f23c3c;">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team"  style="color:#f23c3c;">Team</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact" style="color:#f23c3c;">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('registrations.index')}}"  style="color:#f23c3c;">Create Account</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('visitor.index')}}" style="color:#f23c3c;">Visitor Login</a></li>
                        @guest
                         <li class="nav-item"><a class="nav-link" href="{{route('login')}}"  style="color:#f23c3c;">Admin Login</a></li>  
                      @endguest

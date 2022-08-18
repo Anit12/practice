@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,15 +22,21 @@ Route::get('/registrations.index', function () {
     return view('registrations.index');
 })->name(name:'registrations.index');
 
+
+
 Route::get('/registrations.thankyou', function () {
     return view('registrations.thankyou');
+
 })->name(name:'registrations.thankyou');
 //Route::put('/regisrtrations',[RegistrationController::Class,'registrations.index']);
 //Route::post('/', [RegistrationController::class, 'index']);
 Route::resource( 'registrations', RegistrationController::Class);
-//->middleware(middleware: 'auth');
+//->middleware(middlewar: 'auth');
 
 
+Route::get('/visitor.index',function(){
+    return view('visitor.index');
+});
 
 Route::get('visitor_list/', [App\Http\Controllers\RegistrationController::class, 'index']);
 Route::get('create_visitor/', [App\Http\Controllers\RegistrationController::class, 'create']);
