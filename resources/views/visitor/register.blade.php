@@ -3,12 +3,12 @@
 <link href="{{ asset('css/login.css')}}" rel="stylesheet" />
 <!------ Include the above in your HEAD tag ---------->
 
-<div class="wrapper fadeInDown">
+<div class="wrapper fadeInDown" style="margin-top:80px;">
   <div id="formContent">
     <!-- Tabs Titles -->
 
    
-    <form method="post"   enctype="multipart/form-data"   style="margin-top:60px;">
+<form method="post" action="{{route('visitor.index')}}"  enctype="multipart/form-data" >
 @method('POST')
     @csrf
 <div class="container register-form">
