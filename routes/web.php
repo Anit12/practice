@@ -34,9 +34,6 @@ Route::resource( 'registrations', RegistrationController::Class);
 //->middleware(middlewar: 'auth');
 
 
-Route::get('/visitor.index',function(){
-    return view('visitor.index');
-});
 
 Route::get('visitor_list/', [App\Http\Controllers\RegistrationController::class, 'index']);
 Route::get('create_visitor/', [App\Http\Controllers\RegistrationController::class, 'create']);
