@@ -8,7 +8,7 @@
     <!-- Tabs Titles -->
 
    
-<form method="post" action="{{route('visitor.index')}}"  enctype="multipart/form-data" >
+<form method="POST" action="{{url('register_store')}}"  enctype="multipart/form-data" >
 @method('POST')
     @csrf
 <div class="container register-form">
@@ -29,15 +29,15 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Name *"  name ="name"/>
+                                <input type="text" class="form-control" placeholder="Your Name *"  name ="name" value="">
                             </div><br>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Father Namer *" name="fname" />
+                                <input type="text" class="form-control" placeholder="Father Namer *" name="fname"  />
                             </div>
                         </div><br>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Your Password *" name="password" />
+                                <input type="password" class="form-control" placeholder="Your Password *" name="password"  />
                             </div><br>
                             <div class="form-group">
                                 <input type="email" class="form-control" placeholder="Email id *" name="email" />
@@ -49,7 +49,12 @@
                      <div class="row">
                      <div class="col-md-6">
                         <div class="form-group">
-                                <input type="number" class="form-control" placeholder="Mobile Number *" name="number" />
+                                <input type="number" class="form-control" placeholder="Mobile Number *" name="mobile" />
+                            </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Mobile Number *" name="address" />
                             </div>
                     </div>
                      </div>
