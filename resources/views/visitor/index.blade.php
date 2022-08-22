@@ -7,7 +7,9 @@
   <div id="formContent">
   
     <!-- Login Form -->
-    <form>
+    <form method="POST" action="{{url('index_show')}}"  enctype="multipart/form-data" >
+      @method('POST')
+      @csrf
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
       <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
       <input type="submit" class="fadeIn fourth" value="Log In">

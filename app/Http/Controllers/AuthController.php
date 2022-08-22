@@ -3,11 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreRegisterPostRequest;
 use App\Models\Register;
 class AuthController extends Controller
 {
-   public function index(){
+   public function visitor_index(){
+
     return view('visitor.index');
+
+   }
+   public function index_show(Request $request)
+   {
+      return view('visitor.index');
+ 
+      
    }
    public function visitor_register(){
       
@@ -16,8 +25,8 @@ class AuthController extends Controller
       // return view('registrations.index', compact('registrations'))->with('status','Added Successfully');
       return view('visitor.register');
      }
-
-     public function register_store(Request $request)
+ 
+     public function register_store(StoreRegisterPostRequest $request)
      {
         //$register_store = Register::all();
         $register_store = new Register;
@@ -31,7 +40,7 @@ class AuthController extends Controller
         if($result)
         {
              $register_store = Register::all();
-            echo "<script>alert($register_store)</script>";
+            echo "<script>alert('you are Successfully Register')</script>";
         }
         else{
             echo "<script>alert('Not Done')</script>";

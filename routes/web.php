@@ -33,7 +33,10 @@ Route::get('/registrations.thankyou', function () {
 Route::resource( 'registrations', RegistrationController::Class);
 //->middleware(middlewar: 'auth');
 
-Route::get('visitor.index', [AuthController::class, 'index'])->name('visitor.index');
+//Route::get('visitor.index', [AuthController::class, 'index'])->name('visitor.index');
+Route::get('visitor_index', [App\Http\Controllers\AuthController::class, 'visitor_index']);
+
+Route::post('index_show', [App\Http\Controllers\AuthController::class, 'index_show']);
 
 Route::get('visitor_register', [App\Http\Controllers\AuthController::class, 'visitor_register']);
 Route::post('register_store', [App\Http\Controllers\AuthController::class, 'register_store']);

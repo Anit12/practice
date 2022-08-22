@@ -31,11 +31,11 @@
                         <li class="nav-item"><a class="nav-link" href="#portfolio"  style="color:#f23c3c;">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about"  style="color:#f23c3c;">About</a></li>
                        
-                        <li class="nav-item"><a class="nav-link" href="{{route('registrations.index')}}"  style="color:#f23c3c;">Contact for working</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{route('visitor.index')}}" style="color:#f23c3c;">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('registrations.index')}}"  style="color:#f23c3c;">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{url('visitor_index/')}}" style="color:#f23c3c;">Login</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{url('visitor_register/')}}" style="color:#f23c3c;">Register</a></li>
                        @guest
-                        <li class="nav-item"><a class="nav-link" href="{{route('login')}}"  style="color:#f23c3c;">Admin Login</a></li>  
+                        <li class="nav-item"><a class="nav-link" href="{{route('login')}}"  style="color:#f23c3c;">Admin</a></li>  
                      @endguest
                     </ul>
                 </div>
